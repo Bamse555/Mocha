@@ -1,4 +1,4 @@
-package com.bamse.mochaglobal
+package com.bamse.mochaglobal.refactoredCarClass
 
 enum class CarType (val index: Int, val initialAmount: Double, val minDaysToRent: Int, val amountPerDay: Double){
     MUSCLE (2, 200.0, 3, 50.0),
@@ -55,7 +55,10 @@ class Customer(name: String) {
             val carType =
                 CarType.values().first { it.index == rental.getCar().getPriceCode() }
             val daysRented = rental.getDaysRented()
+            //add initial amount
             thisAmount += carType.initialAmount
+
+            //add days rented amount
             if (daysRented > carType.minDaysToRent) {
                 thisAmount += (daysRented - carType.minDaysToRent) * carType.amountPerDay
             }
