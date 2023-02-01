@@ -1,6 +1,6 @@
 package com.bamse.mochaglobal
 
-enum class CarType (val type: Int, val initialAmount: Double, val minDaysToRent: Int, val amountPerDay: Double){
+enum class CarType (val index: Int, val initialAmount: Double, val minDaysToRent: Int, val amountPerDay: Double){
     MUSCLE (2, 200.0, 3, 50.0),
     ECONOMY (0, 80.0, 2, 30.0),
     SUPERCAR (1, 0.0, 0, 200.0);
@@ -46,49 +46,35 @@ class Customer(name: String) {
 
     fun billingStatement(): String {
 
+        var result = "Rental Record for " + getName() + "\n"
         var totalAmount = 0.0
         var frequentRenterPoints = 0
-
-        val iterator = _rentals.iterator()
-        var result = "Rental Record for " + getName() + "\n"
-
-        while (true) {
-            try {
-                val each = iterator.next()
-                var thisAmount= 0.0
-
-                //determine amounts for each line
-                when (each.getCar().getPriceCode()) {
-                    CarType.ECONOMY.ordinal -> {
-                        thisAmount += 80
-                        if (each.getDaysRented() > 2) {
-                            thisAmount += ((each.getDaysRented()) - 2).toDouble() * 30.0
-                        }
-                    }
-                    CarType.SUPERCAR.ordinal ->
-                        thisAmount += (each.getDaysRented()).toDouble() * 200.0
-                    CarType.MUSCLE.ordinal -> {
-                        thisAmount += 200
-                        if (each.getDaysRented() > 3) {
-                            thisAmount += ((each.getDaysRented()).toDouble() - 3) * 50.0
-                        }
-                    }
-                }
-                // add frequent renter points
-                frequentRenterPoints += 1
-                // add bonus for a two day new release rental
-                if ((each.getCar().getPriceCode() == CarType.SUPERCAR.ordinal) && each.getDaysRented() > 1) { frequentRenterPoints += 1 }
-                //show figures for this rental
-                result += "\t" + each.getCar().getTitle() + "\t" + thisAmount.toString() + "\n"
-                totalAmount += thisAmount
-            } catch (e: java.util.NoSuchElementException){
-                break
+        var thisAmount: Double
+        _rentals.forEach { rental ->
+            thisAmount = 0.0
+            val carType =
+                CarType.values().first { it.index == rental.getCar().getPriceCode() }
+            val daysRented = rental.getDaysRented()
+            thisAmount += carType.initialAmount
+            if (daysRented > carType.minDaysToRent) {
+                thisAmount += (daysRented - carType.minDaysToRent) * carType.amountPerDay
             }
+
+            frequentRenterPoints += 1
+            // add bonus for a two day new release rental
+            if ((carType.index == CarType.SUPERCAR.index) && daysRented > 1) {
+                frequentRenterPoints += 1
+            }
+
+            //show figures for this rental
+            result += "\t" + rental.getCar().getTitle() + "\t" + thisAmount.toString() + "\n"
+            totalAmount += thisAmount
+
         }
 
         //add footer lines
-        result += "Final rental payment owed " + totalAmount.toString() + "\n"
-        result += "You received an additional " + frequentRenterPoints.toString() + " frequent customer points"; return result
+        result += "Final rental payment owed $totalAmount\n"
+        result += "You received an additional $frequentRenterPoints frequent customer points"; return result
     }
 }
 
