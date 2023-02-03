@@ -1,7 +1,7 @@
 package com.plcoding.weatherapp.di
 
-import com.bamse.mochaglobal.repository.WeatherAlertsRepository
-import com.bamse.mochaglobal.repository.WeatherAlertsRepositoryImpl
+import com.bamse.mochaglobal.repository.AlertsRepository
+import com.bamse.mochaglobal.repository.AlertsRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -17,6 +17,6 @@ abstract class RepositoryModule {
     @Binds
     @Singleton
     abstract fun bindWeatherRepository(
-        weatherRepositoryImpl: WeatherAlertsRepositoryImpl
-    ): WeatherAlertsRepository
+        weatherRepositoryImpl: AlertsRepositoryImpl
+    ): AlertsRepository
 }

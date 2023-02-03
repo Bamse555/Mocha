@@ -1,19 +1,19 @@
 package com.bamse.mochaglobal.repository
 
 import com.bamse.mochaglobal.util.Resource
-import com.bamse.mochaglobal.weatherAlerts.WeatherAlertInfo
-import com.bamse.mochaglobal.api.WeatherAlertsApi
+import com.bamse.mochaglobal.weatherAlerts.AlertInfo
+import com.bamse.mochaglobal.api.AlertsApi
 import com.bamse.mochaglobal.util.toWeatherAlertInfo
 import javax.inject.Inject
 
-class WeatherAlertsRepositoryImpl @Inject constructor(
-    private val api: WeatherAlertsApi
-): WeatherAlertsRepository {
+class AlertsRepositoryImpl @Inject constructor(
+    private val api: AlertsApi
+): AlertsRepository {
 
-    override suspend fun getWeatherAlertsData(): Resource<WeatherAlertInfo> {
+    override suspend fun getAlertsData(): Resource<AlertInfo> {
         return try {
             Resource.Success(
-                data = api.getWeatherAlertsData().toWeatherAlertInfo()
+                data = api.getAlertsData().toWeatherAlertInfo()
             )
         } catch(e: Exception) {
             e.printStackTrace()

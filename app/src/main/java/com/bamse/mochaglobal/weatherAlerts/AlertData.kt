@@ -1,8 +1,6 @@
 package com.bamse.mochaglobal.weatherAlerts
 
-import java.time.LocalDateTime
-
-data class WeatherAlertData(
+data class AlertData(
     val sent: String,
     val eventName: String,
     val startDate: String,

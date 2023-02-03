@@ -1,10 +1,9 @@
 package com.bamse.mochaglobal.modules
 
 import android.app.Application
-import com.bamse.mochaglobal.api.WeatherAlertsApi
+import com.bamse.mochaglobal.api.AlertsApi
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,7 +11,6 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.create
 import javax.inject.Singleton
@@ -23,7 +21,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideWeatherApi(): WeatherAlertsApi {
+    fun provideWeatherApi(): AlertsApi {
         val logging: HttpLoggingInterceptor? = HttpLoggingInterceptor()
         val  httpclient: OkHttpClient.Builder? = OkHttpClient.Builder()
         logging?.setLevel(HttpLoggingInterceptor.Level.BODY)

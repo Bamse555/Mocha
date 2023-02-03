@@ -15,7 +15,7 @@ fun AlertsForecast(
     state: AlertState,
     modifier: Modifier = Modifier
 ) {
-    state.weatherAlertInfo?.alertsDataPerDay?.get(0)?.let { data ->
+    state.alertInfo?.alertsDataPerDay?.get(0)?.let { data ->
         Column(
             modifier = modifier
                 .fillMaxWidth()

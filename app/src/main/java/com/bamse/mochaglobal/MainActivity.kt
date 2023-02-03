@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.bamse.mochaglobal.models.WeatherAlertsModel
+import com.bamse.mochaglobal.models.AlertsModel
 import com.bamse.mochaglobal.ui.AlertCard
 import com.bamse.mochaglobal.ui.AlertsForecast
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,20 +20,13 @@ import androidx.compose.material.Text
 
 import com.bamse.mochaglobal.ui.theme.DarkBlue
 import com.bamse.mochaglobal.ui.theme.DeepBlue
-import com.bamse.mochaglobal.ui.theme.WeatherAlertsAppTheme
-import okhttp3.logging.HttpLoggingInterceptor
-import okhttp3.OkHttpClient
-
-
-
-
-
+import com.bamse.mochaglobal.ui.theme.AlertsAppTheme
 
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private val viewModel: WeatherAlertsModel by viewModels()
+    private val viewModel: AlertsModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +34,7 @@ class MainActivity : ComponentActivity() {
         viewModel.loadWeatherAlertInfo()
 
         setContent {
-            WeatherAlertsAppTheme {
+            AlertsAppTheme {
                 Box(
                     modifier = Modifier.fillMaxSize()
                 ) {
