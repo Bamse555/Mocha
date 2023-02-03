@@ -3,16 +3,16 @@ package com.bamse.mochaglobal.api
 import com.squareup.moshi.Json
 import java.time.LocalDateTime
 
-
-data class WeatherAlertDataApi(
+//properties
+data class AlertProperties(
     @field:Json(name = "sent")
-    val sent: List<String>,
+    val sent: String,
     @field:Json(name = "event")
-    val eventsNames: List<String>,
+    val eventName: String,
     @field:Json(name = "effective")
-    val startDates: List<LocalDateTime>,
+    val startDates: String,
     @field:Json(name = "ends")
-    val endDates: List<LocalDateTime>,
+    val endDates: String?,
     @field:Json(name = "senderName")
-    val sourcesNames: List<String>,
+    val sourcesNames: String,
 )
