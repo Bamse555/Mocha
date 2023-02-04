@@ -1,7 +1,6 @@
 package com.bamse.mochaglobal.api
 
 import com.squareup.moshi.Json
-import java.time.LocalDateTime
 
 //properties
 data class AlertProperties(
@@ -10,9 +9,9 @@ data class AlertProperties(
     @field:Json(name = "event")
     val eventName: String,
     @field:Json(name = "effective")
-    val startDates: String,
+    val startDate: String,
     @field:Json(name = "ends")
-    val endDates: String?,
+    val endDate: String?,
     @field:Json(name = "senderName")
-    val sourcesNames: String,
+    val sourcesName: String,
 )

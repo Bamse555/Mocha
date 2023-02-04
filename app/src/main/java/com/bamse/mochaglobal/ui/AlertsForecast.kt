@@ -1,39 +1,33 @@
 package com.bamse.mochaglobal.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import com.bamse.mochaglobal.ui.theme.Background
 
 @Composable
 fun AlertsForecast(
     state: AlertState,
     modifier: Modifier = Modifier
 ) {
-    state.alertInfo?.alertsDataPerDay?.get(0)?.let { data ->
+    state.alertInfo?.alertsData?.get(0)?.let { data ->
         Column(
             modifier = modifier
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp)
+                .padding(horizontal = 16.dp, vertical = 16.dp)
         ) {
-            Text(
-                text = "Today",
-                fontSize = 20.sp,
-                color = Color.White
-            )
-            Spacer(modifier = Modifier.height(16.dp))
-            LazyRow(content = {
+            LazyColumn(content = {
                 items(data) { weatherData ->
-                    HourlyWeatherDisplay(
-                        weatherData = weatherData,
+                    AlertDisplay(
+                        alertData = weatherData,
                         modifier = Modifier
-                            .height(100.dp)
-                            .padding(horizontal = 16.dp)
+                            .fillMaxWidth(1f)
+                            .padding(vertical = 16.dp)
+                            .background(Background)
                     )
                 }
             })

@@ -22,7 +22,7 @@ class AlertsModel @Inject constructor(
     var state by mutableStateOf(AlertState())
         private set
 
-    fun loadWeatherAlertInfo() {
+    fun loadAlerts() {
         viewModelScope.launch {
             state = state.copy(
                 isLoading = true,

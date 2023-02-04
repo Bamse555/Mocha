@@ -13,14 +13,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.bamse.mochaglobal.models.AlertsModel
-import com.bamse.mochaglobal.ui.AlertCard
 import com.bamse.mochaglobal.ui.AlertsForecast
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.compose.material.Text
 
-import com.bamse.mochaglobal.ui.theme.DarkBlue
-import com.bamse.mochaglobal.ui.theme.DeepBlue
 import com.bamse.mochaglobal.ui.theme.AlertsAppTheme
+import com.bamse.mochaglobal.ui.theme.CardBackground
 
 
 @AndroidEntryPoint
@@ -31,24 +29,21 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewModel.loadWeatherAlertInfo()
+        viewModel.loadAlerts()
 
         setContent {
             AlertsAppTheme {
                 Box(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize(),
                 ) {
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(DarkBlue)
+                            .background(CardBackground)
                     ) {
-                        AlertCard(
-                            state = viewModel.state,
-                            backgroundColor = DeepBlue
-                        )
                         Spacer(modifier = Modifier.height(16.dp))
                         AlertsForecast(state = viewModel.state)
+                        Spacer(modifier = Modifier.height(16.dp))
                     }
                     if(viewModel.state.isLoading) {
                         CircularProgressIndicator(

@@ -12,8 +12,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.WeatherAlertsAppTheme"
-        android:name = ".AlertsMochaApp"
-        tools:targetApi="31">
+        android:name = ".AlertsMochaApp">
         <activity
             android:name=".MainActivity"
             android:exported="true">

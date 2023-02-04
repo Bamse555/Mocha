@@ -5,5 +5,6 @@ data class AlertData(
     val eventName: String,
     val startDate: String,
     val endDate: String?,
+    val duration: String?,
     val sourceName: String,
 )
