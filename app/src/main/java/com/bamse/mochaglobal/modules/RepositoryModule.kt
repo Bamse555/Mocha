@@ -1,4 +1,4 @@
-package com.plcoding.weatherapp.di
+package com.bamse.mochaglobal.modules
 
 import com.bamse.mochaglobal.repository.AlertsRepository
 import com.bamse.mochaglobal.repository.AlertsRepositoryImpl

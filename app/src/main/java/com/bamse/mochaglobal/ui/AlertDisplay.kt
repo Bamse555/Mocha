@@ -11,6 +11,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberAsyncImagePainter
 import com.bamse.mochaglobal.R
 import com.bamse.mochaglobal.weatherAlerts.AlertData
 import java.time.format.DateTimeFormatter
@@ -21,26 +22,15 @@ fun AlertDisplay(
     modifier: Modifier = Modifier,
     textColor: Color = Color.White
 ) {
-//    val formattedStartTime = remember(alertData) {
-//        alertData.startDate.format(
-//            DateTimeFormatter.ofPattern("HH:mm")
-//        )
-//    }
-//
-//    val formattedTimeDuration = remember(alertData) {
-//        alertData.startDate.format(
-//            DateTimeFormatter.ofPattern("HH:mm")
-//        )
-//    }
     Column(
         modifier = modifier.padding(10.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween,
     ) {
         Image(
-            painter = painterResource(id = R.drawable.ic_rainshower),
+            painter = rememberAsyncImagePainter(alertData.image),
             contentDescription = null,
-            modifier = Modifier.width(40.dp)
+            modifier = Modifier.size(40.dp)
         )
 
         Spacer(modifier = Modifier.width(6.dp))

@@ -10,6 +10,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.create
 import javax.inject.Singleton
 
@@ -21,15 +22,16 @@ object AppModule {
     @Singleton
     fun provideWeatherApi(): AlertsApi {
         val  httpclient: OkHttpClient.Builder? = OkHttpClient.Builder()
-//        val logging: HttpLoggingInterceptor? = HttpLoggingInterceptor()
-//        logging?.setLevel(HttpLoggingInterceptor.Level.BODY)
-//        if (logging != null) {
-//            httpclient?.interceptors()?.add(logging)
-//        }
+        val logging: HttpLoggingInterceptor? = HttpLoggingInterceptor()
+        logging?.setLevel(HttpLoggingInterceptor.Level.BODY)
+        if (logging != null) {
+            httpclient?.interceptors()?.add(logging)
+        }
         return Retrofit.Builder()
             .baseUrl("https://api.weather.gov/")
             .client(httpclient!!.build())
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create().asLenient())
             .build()
             .create()
     }

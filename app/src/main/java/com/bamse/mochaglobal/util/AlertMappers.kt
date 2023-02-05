@@ -3,8 +3,15 @@ package com.bamse.mochaglobal.util
 import com.bamse.mochaglobal.api.Alert
 import com.bamse.mochaglobal.weatherAlerts.AlertData
 import com.bamse.mochaglobal.weatherAlerts.AlertInfo
+import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody
+import okhttp3.ResponseBody
 import org.joda.time.Period
-import java.time.Duration
+import retrofit2.Converter
+import retrofit2.Retrofit
+import java.io.IOException
+import java.lang.reflect.Type
 import java.time.OffsetDateTime
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
@@ -24,7 +31,6 @@ fun Alert.toWeatherAlertInfo(): AlertInfo {
         val endDate =
             if (feature.properties.endDate.isNullOrBlank()) null else OffsetDateTime.parse(feature.properties.endDate)
                 .toZonedDateTime()
-//        val duration = if (endDate != null) (Duration.between( startDate , endDate )) else null
         val duration = if (endDate != null) (Period(
             endDate.toInstant().toEpochMilli(),
             startDate.toInstant().toEpochMilli()
@@ -48,7 +54,8 @@ fun Alert.toWeatherAlertInfo(): AlertInfo {
                                 duration.minutes.absoluteValue.toString().padStart(2, '0')
                             }m"
                 } else null,
-                sourceName = sourceName
+                sourceName = sourceName,
+                image = ""
             )
         )
     }.groupBy {

@@ -7,4 +7,5 @@ data class AlertData(
     val endDate: String?,
     val duration: String?,
     val sourceName: String,
+    val image: String?
 )

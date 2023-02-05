@@ -27,7 +27,7 @@ fun AlertsForecast(
                         modifier = Modifier
                             .fillMaxWidth(1f)
                             .padding(vertical = 16.dp)
-                            .background(Background)
+                            .background(Background),
                     )
                 }
             })

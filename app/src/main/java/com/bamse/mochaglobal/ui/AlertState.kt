@@ -4,6 +4,7 @@ import com.bamse.mochaglobal.weatherAlerts.AlertInfo
 
 data class AlertState(
     val alertInfo: AlertInfo? = null,
+    val alertImage: String? = null,
     val isLoading: Boolean = false,
     val error: String? = null
 )
