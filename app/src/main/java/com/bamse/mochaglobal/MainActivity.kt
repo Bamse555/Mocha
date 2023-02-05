@@ -18,6 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import androidx.compose.material.Text
 
 import com.bamse.mochaglobal.ui.theme.AlertsAppTheme
+import com.bamse.mochaglobal.ui.theme.Background
 import com.bamse.mochaglobal.ui.theme.CardBackground
 
 
@@ -45,9 +46,10 @@ class MainActivity : ComponentActivity() {
                         AlertsForecast(state = viewModel.state)
                         Spacer(modifier = Modifier.height(16.dp))
                     }
-                    if(viewModel.state.isLoading) {
+                    if (viewModel.state.isLoading) {
                         CircularProgressIndicator(
-                            modifier = Modifier.align(Alignment.Center)
+                            modifier = Modifier.align(Alignment.Center),
+                            color = Background
                         )
                     }
                     viewModel.state.error?.let { error ->

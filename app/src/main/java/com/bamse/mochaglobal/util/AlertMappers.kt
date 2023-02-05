@@ -1,21 +1,12 @@
 package com.bamse.mochaglobal.util
 
 import com.bamse.mochaglobal.api.Alert
-import com.bamse.mochaglobal.weatherAlerts.AlertData
-import com.bamse.mochaglobal.weatherAlerts.AlertInfo
-import okhttp3.MediaType
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody
-import okhttp3.ResponseBody
+import com.bamse.mochaglobal.alerts.AlertData
+import com.bamse.mochaglobal.alerts.AlertInfo
 import org.joda.time.Period
-import retrofit2.Converter
-import retrofit2.Retrofit
-import java.io.IOException
-import java.lang.reflect.Type
 import java.time.OffsetDateTime
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
-import java.util.*
 import kotlin.math.absoluteValue
 
 private data class IndexedAlertsData(
@@ -23,8 +14,8 @@ private data class IndexedAlertsData(
     val data: AlertData
 )
 
-fun Alert.toWeatherAlertInfo(): AlertInfo {
-    val list = weatherData.mapIndexed { index, feature ->
+fun Alert.toAlertInfo(): AlertInfo {
+    val list = alertData.mapIndexed { index, feature ->
         val formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy HH:mm")
         val eventName = feature.properties.eventName
         val startDate = OffsetDateTime.parse(feature.properties.startDate).toZonedDateTime()

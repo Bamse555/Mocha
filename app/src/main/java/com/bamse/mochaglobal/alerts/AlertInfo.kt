@@ -1,4 +1,4 @@
-package com.bamse.mochaglobal.weatherAlerts
+package com.bamse.mochaglobal.alerts
 
 data class AlertInfo(
     val alertsData: Map<Int, List<AlertData>>,

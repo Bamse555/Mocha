@@ -21,15 +21,15 @@ fun AlertsForecast(
                 .padding(horizontal = 16.dp, vertical = 16.dp)
         ) {
             LazyColumn(content = {
-                items(data) { weatherData ->
+                items(data) { alertData ->
                     AlertDisplay(
-                        alertData = weatherData,
-                        alertImage = state.alertImage,
                         modifier = Modifier
                             .fillMaxWidth(1f)
                             .padding(vertical = 16.dp)
                             .background(Background),
-                    )
+                        alertData = alertData,
+                        alertImage = state.alertImages?.get(data.indexOf(alertData),
+                    ))
                 }
             })
         }

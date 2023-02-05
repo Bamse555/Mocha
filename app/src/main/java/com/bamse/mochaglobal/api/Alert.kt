@@ -4,5 +4,5 @@ import com.squareup.moshi.Json
 
 data class Alert(
     @field:Json(name = "features")
-    val weatherData: List<AlertFeatures>
+    val alertData: List<AlertFeatures>
 )

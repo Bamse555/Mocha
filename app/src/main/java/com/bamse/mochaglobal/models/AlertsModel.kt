@@ -8,8 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bamse.mochaglobal.repository.AlertsRepository
 import com.bamse.mochaglobal.ui.AlertState
-import com.bamse.mochaglobal.util.Resource
-import com.google.gson.Gson
+import com.bamse.mochaglobal.util.ApiResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Call
@@ -26,6 +25,8 @@ class AlertsModel @Inject constructor(
     var state by mutableStateOf(AlertState())
         private set
 
+    val TAG = "AlertsModel"
+
     fun loadAlerts() {
         viewModelScope.launch {
             state = state.copy(
@@ -34,30 +35,50 @@ class AlertsModel @Inject constructor(
             )
 
             when (val alertResult = repository.getAlertsData()) {
-                is Resource.Success -> {
-                    var imageURL = ""
+                is ApiResponse.Success -> {
+                    val imagesURLs = arrayListOf<String>()
                     val stringCall: Call<String>? = repository.getImages()
-                    stringCall?.enqueue(object : Callback<String?> {
-                        override fun onResponse(call: Call<String?>, response: Response<String?>) {
-                            response.raw().request.url.let {
-                                imageURL = it.toString()
-                                Log.i("Bamse ok", it.toString())
+                    alertResult.data?.alertsData?.get(0)?.forEach { alertData ->
+                        stringCall?.clone()?.enqueue(object : Callback<String?> {
+                            override fun onResponse(
+                                call: Call<String?>,
+                                response: Response<String?>
+                            ) {
+                                response.raw().request.url.let {
+
+                                    if (!imagesURLs.contains(it.toString())) {
+                                        imagesURLs.add(it.toString())
+                                    }
+
+                                    Log.i(TAG, it.toString())
+
+                                    if (alertData == alertResult.data.alertsData[0]?.last()) {
+                                        state = state.copy(
+                                            isLoading = false,
+                                            alertInfo = alertResult.data,
+                                            alertImages = imagesURLs,
+                                            error = null
+                                        )
+                                    }
+                                }
                             }
 
-                            state = state.copy(
-                                isLoading = false,
-                                alertInfo = alertResult.data,
-                                alertImage = imageURL,
-                                error = null
-                            )
-                        }
+                            override fun onFailure(call: Call<String?>, t: Throwable) {
+                                t.message?.let {
+                                    Log.e(TAG, it)
+                                }
+                            }
+                        })
+                    }
 
-                        override fun onFailure(call: Call<String?>, t: Throwable) {
-                            t.message?.let { Log.e("Bamse error", it) }
-                        }
-                    })
+                    state = state.copy(
+                        isLoading = false,
+                        alertInfo = alertResult.data,
+                        alertImages = null,
+                        error = null
+                    )
                 }
-                is Resource.Error -> {
+                is ApiResponse.Error -> {
                     state = state.copy(
                         alertInfo = null,
                         isLoading = false,

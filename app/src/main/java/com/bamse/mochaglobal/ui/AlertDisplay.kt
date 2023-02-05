@@ -6,21 +6,20 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
-import com.bamse.mochaglobal.R
-import com.bamse.mochaglobal.weatherAlerts.AlertData
-import java.time.format.DateTimeFormatter
+import com.bamse.mochaglobal.alerts.AlertData
+import com.bamse.mochaglobal.ui.theme.CardBackground
 
 @Composable
 fun AlertDisplay(
+    modifier: Modifier = Modifier,
     alertData: AlertData,
     alertImage: String?,
-    modifier: Modifier = Modifier,
     textColor: Color = Color.White
 ) {
     Column(
@@ -28,11 +27,14 @@ fun AlertDisplay(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween,
     ) {
+        if (alertImage!= null)
         Image(
             painter = rememberAsyncImagePainter(alertImage),
             contentDescription = null,
             modifier = Modifier.size(40.dp)
         )
+        else
+            CircularProgressIndicator(color = CardBackground)
 
         Spacer(modifier = Modifier.width(6.dp))
 
