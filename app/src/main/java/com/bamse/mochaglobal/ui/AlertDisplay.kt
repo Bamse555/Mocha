@@ -11,6 +11,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import coil.compose.rememberAsyncImagePainter
 import com.bamse.mochaglobal.alerts.AlertData
 import com.bamse.mochaglobal.ui.theme.CardBackground
@@ -28,11 +29,10 @@ fun AlertDisplay(
         verticalArrangement = Arrangement.SpaceBetween,
     ) {
         if (alertImage!= null)
-        Image(
-            painter = rememberAsyncImagePainter(alertImage),
-            contentDescription = null,
-            modifier = Modifier.size(40.dp)
-        )
+            AsyncImage(
+                model = alertImage,
+                contentDescription = null
+            )
         else
             CircularProgressIndicator(color = CardBackground)
 
