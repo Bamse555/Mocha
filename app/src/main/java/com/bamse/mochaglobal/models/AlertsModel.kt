@@ -43,6 +43,7 @@ class AlertsModel @Inject constructor(
                                 imageURL = it.toString()
                                 Log.i("Bamse ok", it.toString())
                             }
+
                             state = state.copy(
                                 isLoading = false,
                                 alertInfo = alertResult.data,

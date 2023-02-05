@@ -19,6 +19,7 @@ import java.time.format.DateTimeFormatter
 @Composable
 fun AlertDisplay(
     alertData: AlertData,
+    alertImage: String?,
     modifier: Modifier = Modifier,
     textColor: Color = Color.White
 ) {
@@ -28,7 +29,7 @@ fun AlertDisplay(
         verticalArrangement = Arrangement.SpaceBetween,
     ) {
         Image(
-            painter = rememberAsyncImagePainter(alertData.image),
+            painter = rememberAsyncImagePainter(alertImage),
             contentDescription = null,
             modifier = Modifier.size(40.dp)
         )

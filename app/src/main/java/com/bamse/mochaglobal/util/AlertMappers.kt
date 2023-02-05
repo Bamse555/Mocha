@@ -55,7 +55,6 @@ fun Alert.toWeatherAlertInfo(): AlertInfo {
                             }m"
                 } else null,
                 sourceName = sourceName,
-                image = ""
             )
         )
     }.groupBy {

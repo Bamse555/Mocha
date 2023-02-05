@@ -24,6 +24,7 @@ fun AlertsForecast(
                 items(data) { weatherData ->
                     AlertDisplay(
                         alertData = weatherData,
+                        alertImage = state.alertImage,
                         modifier = Modifier
                             .fillMaxWidth(1f)
                             .padding(vertical = 16.dp)
