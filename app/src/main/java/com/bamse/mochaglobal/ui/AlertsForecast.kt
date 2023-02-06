@@ -42,7 +42,7 @@ fun AlertsForecast(
                             viewModel.viewModelScope.launch {
                                 //dividing by N the delta for N times slower vertical scroll,
                                 //you can change direction by making it a negative number
-                                stateIsGood.scrollBy(-delta / 4)
+                                stateIsGood.scrollBy(-delta / 2)
                             }
                             delta
                         }
