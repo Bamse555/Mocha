@@ -34,7 +34,7 @@ fun AlertsForecast(
                 .padding(horizontal = 16.dp, vertical = 16.dp)
         ) {
             LazyColumn(
-                modifier =  Modifier
+                modifier = Modifier
                     .scrollable(
                         orientation = Orientation.Vertical,
                         state = rememberScrollableState { delta ->
@@ -42,7 +42,7 @@ fun AlertsForecast(
                             viewModel.viewModelScope.launch {
                                 //dividing by N the delta for N times slower vertical scroll,
                                 //you can change direction by making it a negative number
-                                stateIsGood.scrollBy(-delta/4)
+                                stateIsGood.scrollBy(-delta / 4)
                             }
                             delta
                         }
@@ -50,20 +50,22 @@ fun AlertsForecast(
                 state = stateIsGood,
                 userScrollEnabled = false,
                 content = {
-                items(data, key = { message ->
-                    // Return a stable + unique key for the item
-                    message.id
-                }) { alertData ->
-                    AlertDisplay(
-                        modifier = Modifier
-                            .fillMaxWidth(1f)
-                            .padding(vertical = 16.dp)
-                            .background(Background),
-                        alertData = alertData,
-                        alertImage = state.alertImages?.get(data.indexOf(alertData),
-                    ))
-                }
-            })
+                    items(data, key = { message ->
+                        // Return a stable + unique key for the item
+                        message.id
+                    }) { alertData ->
+                        AlertDisplay(
+                            modifier = Modifier
+                                .fillMaxWidth(1f)
+                                .padding(vertical = 16.dp)
+                                .background(Background),
+                            alertData = alertData,
+                            alertImage = state.alertImages?.get(
+                                data.indexOf(alertData),
+                            )
+                        )
+                    }
+                })
         }
     }
 }

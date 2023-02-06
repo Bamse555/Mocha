@@ -38,7 +38,8 @@ class AlertsModel @Inject constructor(
                 is ApiResponse.Success -> {
                     val imagesURLs = arrayListOf<String>()
                     val stringCall: Call<String>? = repository.getImages()
-                    val data = if (alertResult.data?.alertsData?.get(0) != null) alertResult.data.alertsData[0] else null
+                    val data =
+                        if (alertResult.data?.alertsData?.get(0) != null) alertResult.data.alertsData[0] else null
                     data?.forEach { alertData ->
                         stringCall?.clone()?.enqueue(object : Callback<String?> {
                             override fun onResponse(
@@ -51,7 +52,7 @@ class AlertsModel @Inject constructor(
                                         imagesURLs.add(it.toString())
                                     }
 
-                                    if (data.indexOf(alertData) != 0 && data.indexOf(alertData) % 5 == 0){
+                                    if (data.indexOf(alertData) != 0 && data.indexOf(alertData) % 5 == 0) {
                                         state = state.copy(
                                             isLoading = false,
                                             alertInfo = alertResult.data,
