@@ -43,7 +43,7 @@ class MainActivity : ComponentActivity() {
                             .background(CardBackground)
                     ) {
                         Spacer(modifier = Modifier.height(16.dp))
-                        AlertsForecast(state = viewModel.state)
+                        AlertsForecast(state = viewModel.state, viewModel = viewModel)
                         Spacer(modifier = Modifier.height(16.dp))
                     }
                     if (viewModel.state.isLoading) {

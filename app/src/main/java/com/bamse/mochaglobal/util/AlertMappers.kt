@@ -33,6 +33,7 @@ fun Alert.toAlertInfo(): AlertInfo {
         IndexedAlertsData(
             index = index,
             data = AlertData(
+                id = feature.properties.id,
                 sent = dateTime.format(formatter),
                 eventName = eventName,
                 startDate = startDate.format(formatter),

@@ -6,6 +6,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
@@ -19,15 +20,15 @@ object AppModule {
     @Provides
     @Singleton
     fun provideAlertApi(): AlertsApi {
-        val  httpclient: OkHttpClient.Builder? = OkHttpClient.Builder()
-//        val logging: HttpLoggingInterceptor? = HttpLoggingInterceptor()
-//        logging?.setLevel(HttpLoggingInterceptor.Level.BODY)
-//        if (logging != null) {
-//            httpclient?.interceptors()?.add(logging)
-//        }
+        val  httpclient: OkHttpClient.Builder = OkHttpClient.Builder()
+
+//        val logging = HttpLoggingInterceptor()
+//        logging.setLevel(HttpLoggingInterceptor.Level.BODY)
+//        httpclient.interceptors().add(logging)
+
         return Retrofit.Builder()
             .baseUrl("https://api.weather.gov/")
-            .client(httpclient!!.build())
+            .client(httpclient.build())
             .addConverterFactory(ScalarsConverterFactory.create())
             .addConverterFactory(MoshiConverterFactory.create().asLenient())
             .build()

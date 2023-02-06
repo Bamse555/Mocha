@@ -4,6 +4,8 @@ import com.squareup.moshi.Json
 
 //properties
 data class AlertProperties(
+    @field:Json(name = "id")
+    val id: String,
     @field:Json(name = "sent")
     val sent: String,
     @field:Json(name = "event")
