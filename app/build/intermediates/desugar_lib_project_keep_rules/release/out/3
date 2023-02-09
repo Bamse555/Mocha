@@ -1,0 +1,14 @@
+-keep class j$.time.Instant {
+    long toEpochMilli();
+}
+-keep class j$.time.OffsetDateTime {
+    j$.time.OffsetDateTime parse(java.lang.CharSequence);
+    j$.time.ZonedDateTime toZonedDateTime();
+}
+-keep class j$.time.ZonedDateTime {
+    java.lang.String format(j$.time.format.DateTimeFormatter);
+    j$.time.Instant toInstant();
+}
+-keep class j$.time.format.DateTimeFormatter {
+    j$.time.format.DateTimeFormatter ofPattern(java.lang.String);
+}

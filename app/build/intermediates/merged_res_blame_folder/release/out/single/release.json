@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.bamse.mochaglobal.app-merged_res-51:/layout_activity_main.xml.flat",
+        "source": "com.bamse.mochaglobal.app-main-52:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.bamse.mochaglobal.app-merged_res-51:/drawable_ic_launcher.png.flat",
+        "source": "com.bamse.mochaglobal.app-main-52:/drawable/ic_launcher.png"
+    },
+    {
+        "merged": "com.bamse.mochaglobal.app-merged_res-51:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.bamse.mochaglobal.app-main-52:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.bamse.mochaglobal.app-merged_res-51:/xml_data_extraction_rules.xml.flat",
+        "source": "com.bamse.mochaglobal.app-main-52:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.bamse.mochaglobal.app-merged_res-51:/xml_backup_rules.xml.flat",
+        "source": "com.bamse.mochaglobal.app-main-52:/xml/backup_rules.xml"
+    }
+]
