@@ -4,7 +4,7 @@
             "outputFile": "com.bamse.mochaglobal.app-mergeDebugResources-51:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/Bamse/Work/MochaFinal/app/src/main/res/values-night/strings.xml",
+                    "source": "/Users/Bamse/Work/Mocha/app/src/main/res/values-night/strings.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/Bamse/Work/MochaFinal/app/src/main/res/values-night/colors.xml",
+                    "source": "/Users/Bamse/Work/Mocha/app/src/main/res/values-night/colors.xml",
                     "from": {
                         "startLines": "7,2,3,4,5,6,8",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/Bamse/Work/MochaFinal/app/src/main/res/values-night/themes.xml",
+                    "source": "/Users/Bamse/Work/Mocha/app/src/main/res/values-night/themes.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",

@@ -46,10 +46,10 @@ com.bamse.mochaglobal.app-core-1.9.0-44 /Users/Bamse/.gradle/caches/transforms-3
 com.bamse.mochaglobal.app-jetified-activity-compose-1.6.1-45 /Users/Bamse/.gradle/caches/transforms-3/db1e3d8069a8f1d8e9989ea1f51755b5/transformed/jetified-activity-compose-1.6.1/res
 com.bamse.mochaglobal.app-lifecycle-runtime-2.5.1-46 /Users/Bamse/.gradle/caches/transforms-3/e1def8722c2526ee0e76a70e6e9132d7/transformed/lifecycle-runtime-2.5.1/res
 com.bamse.mochaglobal.app-jetified-runtime-1.2.1-47 /Users/Bamse/.gradle/caches/transforms-3/e74b3824803b6e64ee5c5462b8473d1a/transformed/jetified-runtime-1.2.1/res
-com.bamse.mochaglobal.app-resValues-48 /Users/Bamse/Work/MochaFinal/app/build/generated/res/resValues/debug
-com.bamse.mochaglobal.app-rs-49 /Users/Bamse/Work/MochaFinal/app/build/generated/res/rs/debug
-com.bamse.mochaglobal.app-packageDebugResources-50 /Users/Bamse/Work/MochaFinal/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-com.bamse.mochaglobal.app-packageDebugResources-51 /Users/Bamse/Work/MochaFinal/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-com.bamse.mochaglobal.app-merged_res-52 /Users/Bamse/Work/MochaFinal/app/build/intermediates/merged_res/debug
-com.bamse.mochaglobal.app-debug-53 /Users/Bamse/Work/MochaFinal/app/src/debug/res
-com.bamse.mochaglobal.app-main-54 /Users/Bamse/Work/MochaFinal/app/src/main/res
+com.bamse.mochaglobal.app-resValues-48 /Users/Bamse/Work/Mocha/app/build/generated/res/resValues/debug
+com.bamse.mochaglobal.app-rs-49 /Users/Bamse/Work/Mocha/app/build/generated/res/rs/debug
+com.bamse.mochaglobal.app-packageDebugResources-50 /Users/Bamse/Work/Mocha/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.bamse.mochaglobal.app-packageDebugResources-51 /Users/Bamse/Work/Mocha/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.bamse.mochaglobal.app-merged_res-52 /Users/Bamse/Work/Mocha/app/build/intermediates/merged_res/debug
+com.bamse.mochaglobal.app-debug-53 /Users/Bamse/Work/Mocha/app/src/debug/res
+com.bamse.mochaglobal.app-main-54 /Users/Bamse/Work/Mocha/app/src/main/res

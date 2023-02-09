@@ -6,13 +6,13 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml
+8-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="33" />
-9-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml
+9-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:5:5-67
-11-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:5:22-64
+11-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:5:5-67
+11-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:5:22-64
 12
 13    <permission
 13-->[androidx.core:core:1.9.0] /Users/Bamse/.gradle/caches/transforms-3/da7077469a44549b1a390bf58a131118/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
@@ -26,42 +26,42 @@
 17-->[androidx.core:core:1.9.0] /Users/Bamse/.gradle/caches/transforms-3/da7077469a44549b1a390bf58a131118/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
 18
 19    <application
-19-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:7:5-25:19
+19-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:7:5-25:19
 20        android:name="com.bamse.mochaglobal.AlertsMochaApp"
-20-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:15:9-41
+20-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:15:9-41
 21        android:allowBackup="true"
-21-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:8:9-35
+21-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:8:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 22-->[androidx.core:core:1.9.0] /Users/Bamse/.gradle/caches/transforms-3/da7077469a44549b1a390bf58a131118/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 23        android:dataExtractionRules="@xml/data_extraction_rules"
-23-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:9:9-65
+23-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:9:9-65
 24        android:debuggable="true"
 25        android:fullBackupContent="@xml/backup_rules"
-25-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:10:9-54
+25-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:10:9-54
 26        android:icon="@drawable/ic_launcher"
-26-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:11:9-45
+26-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:11:9-45
 27        android:label="@string/app_name"
-27-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:12:9-41
+27-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:12:9-41
 28        android:supportsRtl="true"
-28-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:13:9-35
+28-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:13:9-35
 29        android:testOnly="true"
 30        android:theme="@style/Theme.WeatherAlertsAppTheme" >
-30-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:14:9-59
+30-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:14:9-59
 31        <activity
-31-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:16:9-24:20
+31-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:16:9-24:20
 32            android:name="com.bamse.mochaglobal.MainActivity"
-32-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:17:13-41
+32-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:17:13-41
 33            android:exported="true" >
-33-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:18:13-36
+33-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:18:13-36
 34            <intent-filter>
-34-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:19:13-23:29
+34-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:19:13-23:29
 35                <action android:name="android.intent.action.MAIN" />
-35-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:20:17-69
-35-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:20:25-66
+35-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:20:17-69
+35-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:20:25-66
 36
 37                <category android:name="android.intent.category.LAUNCHER" />
-37-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:22:17-77
-37-->/Users/Bamse/Work/MochaFinal/app/src/main/AndroidManifest.xml:22:27-74
+37-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:22:17-77
+37-->/Users/Bamse/Work/Mocha/app/src/main/AndroidManifest.xml:22:27-74
 38            </intent-filter>
 39        </activity>
 40        <activity
